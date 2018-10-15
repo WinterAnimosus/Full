@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>jQuery Demo 3:  Using Selectors</title>
+    <style>
+        #btnAttribute2
+        {
+            display: none;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        $(function()
+        {
+            $('#btnHead').click(function(){
+                $('h1').css({"background-color":"navy", "color":"white"});
+                $('h3').css({"background-color":"orange"});
+            });
+            $('#btnPara').click(function(){
+                $('p').css({"background-color":"yellow"});
+            });
+            $('#btnAttribute').click(function(){
+                $('[href="#"]').css({"background":"green", "color":"white"});
+                $('#btnAttribute2').show();
+                $(this).hide();
+            });
+            $('#btnAttribute2').click(function(){
+                $('[href="#"]').css({"background":"", "color":""});
+                $('#btnAttribute').show();
+                $(this).hide();
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <h1>jQuery Selectors</h1>
+    <p>jQuery selectors allow you to select HTML elements (or groups 
+       of elements) by element name, attribute name or by content.</p>
+       
+    <h1>jQuery Element Selectors</h1>
+    <p>jQuery uses CSS selectors to select HTML elements.</p>
+    
+    <h3>This header will be different from others</h3>
+    <a href="#">Empty Link</a>
+    <a href="http://www.jquery.com">jQuery</a>
+    <br>
+    <button id="btnHead">Select Headers</button>
+    <button id="btnPara">Select Paragraphs</button>
+    <button id="btnAttribute">Select Empty Link</button>
+    <button id="btnAttribute2">Deselect Empty Link</button>
+</body>
+</html>

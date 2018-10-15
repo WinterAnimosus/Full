@@ -1,0 +1,275 @@
+/*coffee buzz chapter 6_7.css file*/
+
+/*********************** General rules ***********************/
+*
+{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+html
+{
+    background:url("../img/bg.jpg");
+    background-size: cover;
+}
+body
+{
+    font-family: verdana, Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    margin:0;
+    padding:0;
+    width:100%;
+}
+a:link
+{
+    color:white;
+}
+a:visited
+{
+    color:white;
+}
+a:focus, a:hover
+{
+    color:red;
+}
+/*********************** Header rules ************************/
+header
+{
+    color:white;
+    text-align: center;
+    padding:1rem 2%;
+    height:300px;
+}
+header h1
+{
+    margin:0;
+    text-shadow:-8px -8px 16px black;
+    font-size: 5em;
+}
+header h1 a
+{
+    text-decoration: none;
+}
+header h1 a:hover, header h1 a:focus
+{
+    color: white;
+}
+/********************* Navigation rules **********************/
+nav
+{
+    position: absolute;
+    top:250px;
+    width:100%;
+}
+nav ul
+{
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+nav ul li
+{
+    float: left;
+    width: 25%;
+    background:rgba(20,2,0,0.8);
+}
+nav ul li a
+{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    padding: .5rem 0;
+    text-decoration:none;
+    font-size:14px;
+    border:solid;
+    border-color: white;
+    border-width: thin;
+    transition: background 0.50s ease, color 0.50s ease;
+}
+nav ul li a:hover, nav ul li a:focus
+{
+    background: rgba(102, 58, 29, 0.7);
+    color:black;
+}
+nav ul li ul
+{
+    display:none;
+    position: absolute;
+}
+nav ul li:hover ul
+{
+    display:block;
+    width: 25%;
+}
+nav ul ul li
+{
+    float:none;
+    width:100%;
+}
+/************************ Main rules *************************/
+main
+{
+    /* padding:0.85rem; */
+    background:rgba(255, 255, 255, 0.8);
+}
+section
+{
+    margin:1rem;
+    padding:1rem;
+    border-radius: 30px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
+}
+section hr
+{
+    max-width: 300px;
+    color: #c8c8c8;
+}
+section h2
+{
+    text-align:center;
+}
+#content-wrapper
+{
+    float:left;
+    width: 80%;
+}
+#Mission, #specials
+{
+    background: rgba(255, 255, 255, 0.4);
+    margin: 1rem;
+}
+
+#specials h2::before
+{
+    background:url(../img/sale.png) no-repeat;
+    padding: 0 1rem;
+    content:" ";
+}
+#specials h2::after
+{
+    background: url(../img/sale.png) no-repeat;
+    padding: 0 1rem;
+    content:" ";
+}
+#specials h4
+{
+    color: #541800;
+}
+#specials p
+{
+    color: #e24
+}
+#shops
+{
+    background:rgba(182, 136, 52, 0.8);
+    color: white;
+    margin: 2rem 1rem;
+}
+.simg
+{
+    float:left;
+    width:24%;
+}
+.simg img
+{
+    max-width: 100%;
+}
+/*********************** Sidebar rules ***********************/
+aside
+{
+    width:20%;
+    float:left;
+}
+aside ul
+{
+    list-style-type: none;
+    padding:0;
+    margin: 1rem .25rem;
+}
+aside ul li
+{
+    padding:.5rem;
+    margin-bottom:.4rem;
+    background: rgba(255, 255, 255, 0.8);
+    color: #593620;
+}
+aside ul li a
+{
+    color: #482914!important;
+    text-decoration:none;
+}
+aside ul li:hover, aside ul li:focus
+{
+    font-weight:bold;
+    background: linear-gradient(to right, white 0%, #a67d35 100%);
+
+}
+aside ul li:first-child
+{
+    background: rgba(255, 255, 255, 0.8);
+    columns: #541800;
+    text-align: center;
+    text-transform: uppercase;
+    line-height:42px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+}
+/************************ Footer rules ***********************/
+footer
+{
+    font-size: 75%;
+    height: 50px;
+    background: rgba(0,0,0,0.5)
+}
+footer p
+{
+    color: white;
+    text-align: center;
+    padding-top: 1.5em;
+}
+/*********************** Special rules ***********************/
+#splash img
+{
+    max-width:100%;
+    border:1px dashed #463d2b;
+    padding: .25em;
+}
+
+.banner-area
+{
+    background: url(../img/header-bg2.jpg) center;
+    background-size:cover;
+}
+
+.promo
+{
+    background:rgba(255, 255, 255, 0.8);
+    color:#541800;
+    margin:0.25rem;
+    padding:1rem;
+    text-align:center;
+    border-radius: 15px;
+}
+.promo img
+{
+    max-width:100%;
+}
+.row::after
+{
+    content:"";
+    clear:both;
+    display:table;
+}
+.center
+{
+    text-align:center;
+}
+.special-box
+{
+    margin: 0.25rem;
+    border: 1px dashed;
+    box-sizing: content-box;
+    background: #f7f7f7;
+}

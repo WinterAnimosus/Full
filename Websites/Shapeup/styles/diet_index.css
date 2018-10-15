@@ -1,0 +1,19 @@
+section ul
+{
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+section ul li
+{
+    padding: 0;
+    margin-right: 0.5em;
+}
+section ul li img
+{
+    border: 1px solid black;
+}
+section p img
+{
+    border: 1px solid black;
+}

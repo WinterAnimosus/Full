@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" 
+      content="Welcome to Coffee Buzz. We are dedicated to filling all your caffeine needs through our quality coffees and teas.">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>CoffeeBuzz Coffee | Tea - Moncton, New Brunswick</title>
+<link rel="apple-touch-icon" sizes="180x180" href="../img/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/icons/favicon-16x16.png">
+<link rel="manifest" href="../img/icons/site.webmanifest">
+<link rel="mask-icon" href="../img/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link href="../css/normalize.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<link href="../css/chapter13.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!-- PAGE HEADER GOES HERE -->
+	<header class="banner-area">
+		<h1>Coffee Buzz</h1>
+		<p><span>Provide all the caffeine that you need to power your life</span></p>
+		<!-- PAGE NAVIGATION GOES HERE -->
+		<nav>
+			<ul>
+				<li><a href="index.htm"><i class="fas fa-home"></i> HOME</a></li>
+				<li>
+					<a href="#" title="Check out our menu"><i class="fas fa-utensils"></i> MENU</a>
+					<ul>
+	                	<li><a href="coffee_menu.htm">COFFEE</a></li>
+	                    <li><a href="#">TEA</a></li>
+	                    <li><a href="#">DONUTS</a></li>
+	                    <li><a href="#">MUFFINS</a></li>
+	                </ul>
+
+				</li>
+				<li><a href="#" title="How to contact us"><i class="fas fa-envelope"></i> CONTACT</a></li>
+				<li><a href="#" title="More about Coffee Buzz"><i class="fas fa-info-circle"></i> ABOUT</a></li>
+		  	</ul>		
+		</nav>
+	</header>	   
+   	<!-- MAIN PAGE CONTENT GOEST HERE -->	
+<!--    	<div id="wrapper"> -->
+	    <main>	
+			<section id="main-content" class="row">
+				<hr>
+				<h2>Job Application form</h2>
+				<hr>
+				<form action="apply_thanks.aspx" method="post" name="apply_form" id="apply_form">
+					<fieldset>
+						<legend>Contact Information</legend>
+						<p>
+							<label for="firstname">First Name*:</label>
+							<input type="text" name="First-Name" id="firstname" placeholder="Please enter your first name" required>
+						</p>
+						<p>
+							<label for="lastname">Last Name*:</label>
+							<input type="text" name="Last-Name" id="lastname" placeholder="Please enter your last name" required>
+						</p>
+						<p>
+							<label for="email"> Email*:</label>
+							<input type="email" name="Email" id="email" placeholder="Please enter your Email" required>
+						</p>
+						<p>
+							<label for="phone"> phone:</label>
+							<input type="text" name="Phone" id="phone" placeholder="Phone is not required">
+						</p>
+						<p>
+							<label for="address">Address*:</label>
+							<input type="text" name="Address" id="address" placeholder="Please enter your address" required>
+						</p>
+						<p>
+							<label for="city">City*:</label>
+							<input type="text" name="City" id="city" placeholder="Please enter your city" required>
+						</p>
+						<p>
+							<label for="province">Province*:</label>
+							<select name="Province" id="province">
+								<option value="">Please select a province</option>
+								<option value="NB">New Brunswick [NB]</option>
+								<option value="PE">Prince Edward Island [PEI]</option>
+								<option value="NS">Nova Scotia [NS]</option>
+							</select>
+						</p>
+						<p>
+							<label for="postalcode"> Postal Code*:</label>
+							<input type="text" name="Postal-Code" id="postalcode" pattern="[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d" oninvalid="this.setCustomValidity('Please use the valid formating. D1D 1D1')" oninput="this.setCustomValidity('')" placeholder="Please entered your Postal code." required>
+						</p>
+					</fieldset>
+					
+					<fieldset>
+						<legend>Job Information</legend>
+						<P>
+							<label>Work Location</label>
+						</P>
+						<p>
+							<input type="checkbox" name="Locations" id="location_moncton" value="Moncton" checked> Moncton
+							<input type="checkbox" name="Locations" id="location_saint-john" value="Saint-John"> Saint-John
+						</p>
+						<p><label>Positions</label></p>
+						<p>
+							<label class="pos">
+								<input type="checkbox" name="Positions" id="position_0" value="storefront">Storefront Association
+							</label>
+							<label class="pos">
+								<input type="checkbox" name="Positions" id="position_1" value="production">Production Associate
+							</label>
+							<label class="pos">
+								<input type="checkbox" name="Positions" id="position_2" value="team">Team Supervisor
+							</label>
+							<label class="pos">
+								<input type="checkbox" name="Positions" id="position_3" value="assist">Assistant Manager
+							</label>
+							<label class="pos">
+								<input type="checkbox" name="Positions" id="position_4" value="store">Store Manager
+							</label>
+						</p>
+						<p><label>status</label></p>
+						<p>
+							<input type="radio" name="Type" id="full" value="Full" checked>Full-time
+							<input type="radio" name="Type" id="part" value="Part">Part-time
+						</p>
+						<p><label>Date Availble</label></p>
+						<p><input type="date" name="Availbable-Date" id="availableDate" required="required"></p>
+						<p><label for="heardAbout">How did you hear about us?</label></p>
+						<p>
+							<select name="Heard-About" id="heardAbout" multiple>
+								<option value="coffeebuzz">CoffeeBuzz Website</option>
+								<option value="newspaper">Newspaper</option>
+								<option value="radio">Radio</option>
+								<option value="careerbeacon">Career Beacon</option>
+							</select>
+						</p>
+						<p>
+							<input type="submit" id="send" name="send" value="Submit Application">
+						</p>
+					</fieldset>
+				</form>
+			</section>
+	    </main>
+	<!-- </div> -->
+    <!-- PAGE SIDEBAR NAVIGATION GOES HERE -->
+    <aside>
+		<ul>
+			<li>To learn more</li>
+			<li><a href="" title="Check out our music">Lounge <i class="fas fa-drum"></i></a></li>
+			<li><a href="careers.htm" title="Careers at CoffeeBuzz">Careers <i class="fas fa-users"></i></a></li>
+			<li><a href="news.html" title="Read our newsletter">Newsletter <i class="fas fa-newspaper"></i></a></li>
+			<li><a href="" title="Learn more about fair trade coffee">Fair Trade <i class="fas fa-coffee"></i></a></li>
+		</ul>
+		<div class="promo">
+			<h3>Pay with your phone</h3>
+			<p>Download our app to pay using your mobile phone</p>
+			<p><a href="#"><img src="../img/apple_pay-dark.png" alt="Download iphone app" /></a></p>
+			<p><a href="#"><img src="../img/google-play-dark.png" alt="Download android app" /></a></p>
+  		</div>				
+    </aside>
+  	<!-- PAGE FOOTER GOES HERE -->
+	<footer>
+   		<p><em>Copyright &copy;2018 CoffeeBuzz</em></p>
+	</footer>
+
+</body>
+</html>

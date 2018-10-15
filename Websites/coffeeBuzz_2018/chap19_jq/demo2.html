@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery demo 2:  Basic syntax</title>
+	<link href="https://code.jquery.com/ui/1.12.1/themes/dark-hive/jquery-ui.css" rel="stylesheet" type="text/css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+	<script>
+		$(function()
+		{
+			$(".nolink").click(function(event){
+				var link = this;
+				event.preventDefault();
+
+				$('<div title="Jquery">r u sur u want 2 cont.</div>').dialog({
+					modal:true,
+					buttons:{
+						"Yes":function(){
+							window.open(link, '_blank');
+							$(this).dialog('close');
+						},
+						"no":function(){
+							$(this).dialog('close');
+						}
+					}
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>Expanded from demo 1 (nolink) - using jQuery UI</h1>
+	<a class="nolink" href="http://jquery.com">jQuery website</a>
+</body>
+</html>

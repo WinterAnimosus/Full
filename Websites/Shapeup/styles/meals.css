@@ -1,0 +1,58 @@
+form fieldset:first-child label 
+{
+    text-align: right;
+    width: 6em;
+    float: left;
+}
+
+input[type=text], select 
+{
+    width: 40%;
+}
+:required
+{
+    border: 2px solid maroon;
+}
+input[type=text]:valid
+{
+    border: 1px solid black;
+}
+input[type=radio], input[type="checkbox"]
+{
+    margin: 0.5em 0.2em 0.5em 3em;
+}
+
+textarea
+{
+    margin: 0.2em 0em 0em 3em;
+}
+
+legend
+{
+    position: relative;
+    top:-0.3em;
+    font-weight: bold;
+}
+
+fieldset
+{
+    margin-top: 1em;
+}
+
+fieldset#submit input[type=submit]
+{
+    width: 25%;
+    margin: .5em 0.5em .5em 3em;
+    border: 1px solid black;
+}
+
+fieldset#submit input[type=reset]
+{
+    width: 25%;
+    margin: .5em 0em 1em 0em;
+}
+fieldset#submit
+{
+    padding: 0em;
+    margin-bottom: 3em;
+}

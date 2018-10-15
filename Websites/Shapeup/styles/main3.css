@@ -1,0 +1,159 @@
+/* general */
+/* general */
+
+/* special */
+/* special */
+/* html */
+html
+{
+    font-family:sans-serif;
+}
+    /* body */
+        h1, h2, h3
+        {
+            font:bold;
+        }
+
+        body
+        {
+            width: 1200px;
+            border: solid steelblue;
+            margin: 0 auto 19px;
+            box-shadow:0px 8px 16px 8px black;
+        }
+        /* Header */
+        header
+        {
+            border-bottom:solid steelblue;
+            background: linear-gradient(to bottom, white 0%, lightsteelblue 100%);
+        }
+        header img
+        {
+            float:left;
+        }
+        header h1
+        {
+            color:steelblue;
+            text-shadow:2px 2px 4px steelblue;
+            font-size:200%;
+            font-style:italic;
+        }
+        header h1, header h3
+        {
+            text-indent: 5.25%;
+        }
+        /* header */
+
+        /* main */
+            main
+            {
+                clear:both;
+            }
+            /* aside additional */
+                aside#Additional
+                {
+                    width: 254px;
+                    float:left;
+                    margin: 15px 20px 0 20px;
+                    padding-top: 0;
+                }
+                aside#Additional h2
+                {
+                    Margin-top: 0px;
+                    color:maroon;
+                    margin-bottom: 5px;
+                }
+                /* ul */
+                    aside#Additional ul a:link, aside#Additional ul a:visited
+                    {
+                        color:steelblue;
+                        font-weight: bold;
+                    }
+                    aside#Additional ul a:focus, aside#Additional ul a:hover
+                    {
+                        color: maroon;
+                    }
+                    aside#Additional ul li
+                    {
+                        padding:0.25rem;
+                    }
+                    aside#Additional ul
+                    {
+                        margin-top: 0;
+                        padding-left: 4rem;
+                    }
+                /* ul */
+            /* aside additional */
+        
+            /* div */
+            div
+            {
+                float:left;
+                width:548px;
+                margin: 18px 11px 30px 13px;
+            }
+            div h2
+            {
+                margin: 0px 0 10px 0;
+            }
+            /* section */
+                section h3
+                {
+                    margin:0 0 0 0;
+                }
+                section p
+                {
+                    margin: 7px 0 16px 0;
+                }
+                section a:link, section a:visited
+                {
+                    color:maroon;
+                }
+                section a:focus, section a:hover
+                {
+                    color: steelblue;
+                }
+            /* section */
+            /* div */
+
+            /* aside prep */
+                aside#prep
+                {
+                    float:right;
+                    width: 300px;
+                    margin:15px 20px 0 14px;
+                }
+                aside#prep h3
+                {
+                    font-size: 1.3em;
+                    margin:0px 0 5px 0;
+                    color:maroon;
+                }
+                aside#prep h4
+                {
+                    margin:7px 0 0 0;
+                    font-weight:bold;
+                }
+                aside#prep p
+                {
+                    margin:7px 0 0 0;
+                }
+            /* aside prep */
+        /* main */
+
+        /* footer */
+            footer
+            {
+                clear:both;
+                font-size: 75%;
+                text-align: center;
+                background: steelblue;
+                padding:.25em 0 .25em 0;
+            }
+            footer p
+            {
+                color:white;
+            }
+        /* footer */
+    /* body */
+/* html */

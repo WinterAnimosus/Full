@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>jQuery demo 4:  Using the attr and find methods</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        $(function()
+        {
+            $('.checkAll').click(function(){
+                $('.case').prop('checked',this.checked);
+            });
+
+            $('.case').click(function(){
+                if($('.case').length == $('.case:checked').length)
+                {
+                    $('#chkAll').prop("checked", "checked");
+                }else{
+                    $('#chkAll').prop("checked", "");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+ <h1>jQuery Find Method</h1>
+    <p>Select the Job Position</p>
+    <form action="#" method="post" id="frmPosition" name="frmPosition">
+        <input type="checkbox" name="chkPosition"  class="case" value="HTML">HTML
+        <br>
+        <input type="checkbox" name="chkPosition" class="case" value="JAVA">JAVA
+        <br>
+        <input type="checkbox" name="chkPosition" class="case" value="PHP">PHP
+        <br>
+		<input type="checkbox" name="chkPosition" class="case" value="PHP">ASP
+		<br>
+		<input type="checkbox" name="chkPosition" class="case" value="jQuery">jQuery		
+        <br> 
+		<!-- Select All -->       
+        <input type="checkbox" name="chkAll"  id="chkAll" class="checkAll">Select All
+    </form>
+</body>
+</html>

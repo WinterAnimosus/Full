@@ -1,0 +1,29 @@
+label
+{
+    width: 4em;
+    float: left;
+    text-align: right;
+}
+input
+{
+    width: 3em;
+    margin: 0 0.3em 0.5em 0.3em;
+    border: 1px solid black;
+}
+input#bmi
+{
+    border: inherit;
+}
+input[type="button"], input[type="reset"]
+{
+    width: 8.9em;
+    text-align: center;
+    padding: 0em;
+    margin-left: 0.7em;
+    border: inherit;
+}
+input[type="reset"]
+{
+    margin-left: 0.4em;
+    border: inherit;
+}

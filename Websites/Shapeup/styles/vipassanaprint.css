@@ -1,0 +1,34 @@
+header
+{
+    display: none;
+}
+nav#mobile_menu, nav#nav_menu
+{
+    display: none;
+}
+aside
+{
+    display: none;
+}
+footer
+{
+    display: none;
+}
+img
+{
+    display: none;
+}
+h2
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    border-bottom: 0.03in solid black !important;
+}
+body
+{
+    border: none;
+    box-shadow: none;
+}
+div
+{
+    margin: 0 0.5in 0 0.5in !important;
+}

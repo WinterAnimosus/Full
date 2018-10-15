@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Demo 6:  DOM Manipulation </title>
+	<style>
+		#col1 {
+			float:left;
+			width: 48%;
+			margin-right: 2%;
+		}
+		#col2 {
+			float:right;
+			width:50%;
+			background-color:#ccc;
+		}
+		h2 {
+			margin-left:30px
+		}
+
+		.alert{
+			font-weight:bold;
+			text-align:center;
+			text-transform:uppercase;
+			background-color:red;
+			color:white;
+			padding:1em;
+		}
+
+		.addedText
+		{
+			color:#ff0000;	
+			font-weight:bold;
+		}
+
+		.changeP {
+			background-color:#cc6633;
+			color:#fff;
+			width:350px;
+			padding:10px;
+			line-height:1.4em;
+			border: 2px dashed #000;
+		}
+
+		.addBorder{
+			border: 2px dashed black;	
+		}
+
+		.highlight{background-color:yellow;}
+
+	</style>
+  	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script>
+		$(function()
+		{
+			// Calculates number of P in column 2
+			$('.button1Size').click(function(){
+				var total = $("#col2").find('p').not('.alert').length;
+				alert('There are ' + total + ' paragraphs in column 2');
+			});
+
+			// Slides first paragraph up and hides it
+			$('.button2SlideUp').click(function(){
+				$('.firstparagraph').slideUp('fast');
+			});
+			$('.button2SlideDown').click(function(){
+				$('.firstparagraph').slideDown('fast');
+			});
+
+			// Adds text and removes it at the end of the p
+			$('.button3Add').click(function(){
+				var str = "<span class='addedText'>This text has been added!</span>"
+				$('#col2').find('p').not('.alert').append(str);
+			});
+			$('.button3Remove').click(function(){
+				$('span.addedText').remove();
+			});
+
+			// Hiding / showing the third P
+			$('.button4Hide').click(function(){
+				$('#col2 p:nth-of-type(4)').hide('slow');
+			});
+			$('.button4Show').click(function(){
+				$('#col2 p:nth-of-type(4)').show('slow');
+			});
+
+			// Changing EM
+			var flip = 0;
+			$('.button5Change').click(function(){
+				if(flip==0) 
+				{
+					$('#col2 em').css({"color":"#F00", "font-weight":"bold"});
+					flip = 1;
+					$('.button5Change').val('Back to normal');
+				}else{
+					$('#col2 em').css({"color":"inherit", "font-weight":"inherit"});
+					$('.button5Change').val('Change em');
+					flip = 0;
+				}
+
+				
+			});
+
+			// Change css on 5th P
+			$('.button6Add').click(function(){
+				$("#col2 p:nth-of-type(6)").toggleClass('changeP');
+			});
+
+			// Finds the word "Jquery" in column 2 alert box and applys addBorder class to it
+			$('.button7Contains').click(function(){
+				$('.alert:contains("jQuery")').addClass('addBorder');
+			});
+
+			// Find Lorem ipsum and highlights
+			$('.button8Highlight').click(function(){
+				$('#col2:contains()').each(function(){
+					var regex = new RegExp("Lorem ipsum", "g");
+					$(this).html($(this).html().replace(regex, "<span class='highlight'>Lorem ipsum</span>"));
+				});
+			});
+		});
+	</script>
+</head>
+	<body>
+		<div id="col1">
+			<h2>Column 1</h2>
+			<!-- jQuery Examples will go here --> 
+
+			<!-- Example 1 -->
+			<p><strong>Example 1</strong></p>
+			<p>Get the number of paragraphs in column 2 and display 
+				in alert</p>
+			<button class="button1Size">Count Paragraphs</button>
+
+			<!-- Example 2 -->
+			<p><strong>Example 2</strong></p>
+			<p>Animate a paragraph in column 2 using slide animation</p>
+			<button class="button2SlideUp">Slide Up</button>&nbsp;
+			<button class="button2SlideDown">Slide Down</button>
+
+			<!-- Example 3 -->
+			<p><strong>Example 3</strong></p>
+			<p>Add/Remove text from the end of all &lt;p&gt; elements
+				in Column 2 except the red paragraph at the top. </p>
+			<button class="button3Add">Add</button>&nbsp;
+			<button class="button3Remove">Remove</button>  
+
+
+			<!-- Example 4 -->
+			<p><strong>Example 4</strong></p>
+			<p>Remove paragraph 3 with animation</p>
+			<button class="button4Hide">Hide Paragraph 3</button>&nbsp;
+			<button class="button4Show">Show Paragraph 3</button>    
+
+			<!-- Example 5 -->
+			<p><strong>Example 5</strong></p>
+			<p>Change font color and bold for all em tags in Column 2</p>
+			<!--<button id="button5Change">Change em</button>&nbsp;-->
+			<input type="button" class="button5Change" value="Change em" />
+
+			<!-- Example 6 -->
+			<p><strong>Example 6</strong></p>
+			<p>Change the CSS on paragraph 5 in Column 2 by adding a class</p>
+			<button class="button6Add">Change Paragraph 5</button>
+
+			<!-- Example 7 -->
+			<p><strong>Example 7</strong></p>
+			<p>Find the word "jQuery" in Column 2 and apply a border to 
+				the container</p>
+			<button class="button7Contains">Contains jQuery</button>
+
+			<!-- Example 8 -->
+			<p><strong>Example 8</strong></p>
+			<p>Find the words "Lorem ipsum" in Column 2 and highlight it yellow</p>
+			<button class="button8Highlight">Contains Lorem ipsum</button>
+		
+		</div>
+		<div id="col2" class="contentToChange">
+		<h2>Column 2</h2>
+		<!-- Paragraphs of text will go here -->
+		<p class="alert"> jQuery Demo 6: jquery Events and Animation</p>
+		<p class="firstparagraph"> <strong>Paragraph 1</strong> <em>dolor</em> sit amet, consectetuer <em>adipiscing</em> elit, sed
+			diam nonummy nibh euismod <em>tincidunt</em> ut laoreet dolore magna aliquam erat <strong>volutpat</strong>. Ut wisi enim ad minim <em>veniam</em>, quis nostrud exerci <strong>tation</strong> ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+			consequat.</p>
+		<p class="secondparagraph"> <strong>Paragraph 2</strong> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse <strong>molestie</strong> consequat, vel illum <strong>dolore</strong> eu feugiat nulla facilisis at vero
+			eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+			augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer <strong>adipiscing</strong> elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+			dolore magna aliquam erat volutpat.</p>
+		<p class="thirdparagraph"> <strong>Paragraph 3</strong> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
+			nisl ut aliquip ex ea <em>commodo</em> consequat. Duis autem vel eum iriure dolor
+			in hendrerit in <em>vulputate</em> velit esse molestie consequat, vel illum dolore
+			eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+			blandit praesent luptatum zzril delenit augue duis dolore te <strong>feugait</strong> nulla facilisi.</p>
+		<p class="fourthparagraph"> <strong>Paragraph 4</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+			euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
+			minim veniam, <strong>quis</strong> nostrud exerci tation ullamcorper suscipit lobortis
+			nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in <em>hendrerit</em> in vulputate velit <em>esse</em> molestie consequat, vel illum dolore eu feugiat
+			nulla <strong>facilisis</strong> at vero eros et accumsan et <em>iusto</em> odio
+			dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te <strong>feugait</strong> nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+			nonummy nibh <strong>euismod</strong> tincidunt ut laoreet <em>dolore</em> magna
+			aliquam erat volutpat.</p>
+		<p class="fifthparagraph"> <strong>Paragraph 5</strong> Lorem ipsum <em>dolor</em> sit amet, consectetuer <em>adipiscing</em> elit, sed
+			diam nonummy nibh euismod <em>tincidunt</em> ut laoreet dolore magna aliquam erat <strong>volutpat</strong>. Ut wisi enim ad minim <em>veniam</em>, quis nostrud exerci <strong>tation</strong> ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+			consequat.</p>
+		<p class="sixthparagraph"> <strong>Paragraph 6</strong> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse <strong>molestie</strong> consequat, vel illum <strong>dolore</strong> eu feugiat nulla facilisis at vero
+			eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+			augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer <strong>adipiscing</strong> elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+			dolore magna aliquam erat volutpat.</p>
+		</div>
+	</body>
+</html>

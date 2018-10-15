@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery demo 5: Events and Animation</title>
+	<style>  
+	/* a few starting styles */
+		.docB
+		{
+			display: none;
+		}
+		.toggle
+		{
+			background-color: navy;
+			color: white;
+		}
+		#flip, #panel
+		{
+			text-align: center;
+			background-color: brown;
+			border: 1px solid black;
+			color: white;
+		}
+		#panel 
+		{
+			display: none;
+			padding: 60px;
+		}
+		#flip
+		{
+			cursor: crosshair;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script>
+		$(function() //Load DOM
+		{
+			$('.spanA').click(function(){ //Toggles the text below it, which starts shown
+				$('span.docA').toggle();
+			});
+			$('.spanB').click(function(){ //Toggles the text below it, which starts hidden
+				$('span.docB').toggle()
+			});
+
+			$('button').click(function(){ //A toggle with a button, adding a number / specified word inside the parenthesies changes the speed 
+				$(".toggle").toggle("slow"); //slow: 600ms, fast:200ms
+			});
+
+			$("#flip").click(function(){
+				$("#panel").slideToggle("slow");
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>jQuery Toggle Event</h1>
+	<p>
+		<a href="#" class="spanA"> Show / Hide Me </a> <br>
+    		<span class="docA">Hypertext Markup Language</span>
+	</p>
+	<p>
+		<a href="#" class="spanB"> Show / Hide Me </a> <br>
+    	<span class="docB">Cascading Style Sheets</span>
+	</p>
+
+	<h1>Toggle with animation</h1>
+	<button>Toggle this</button>
+	<p class="toggle">Hello</p>
+	<p class="toggle">Want to toggle?</p>
+
+	<h1>Toggle with more animations</h1>
+	<div id="flip">Click to slide panel</div>
+	<div id="panel">Good Morning Students!</div>
+</body>
+</html>

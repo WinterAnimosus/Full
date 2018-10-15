@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Shape Up! | BMI</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" 
+      type="image/png" 
+	  href="../images/favicon.ico"/>
+	<link href="../styles/normalize.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="../styles/slicknav.css"> <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="../js/jquery.slicknav.min.js"></script>
+	<script type="text/javascript">$(document).ready(function(){ $('#nav_menu').slicknav({prependTo:"#mobile_menu"});}); </script>
+	<link href="../styles/main_rwd.css" rel="stylesheet" type="text/css">
+	<link href="../styles/bmi.css" rel="stylesheet" type="text/css">
+	<script src="../js/bmi.js"></script>
+</head>
+
+<body>
+	<header>
+		<a href="../index.html"><img src="../images/shape_up_logo.png" alt="Shape up"></a>
+		<h1 id="mainh">
+			Shape Up!
+		</h1>
+		<h3>
+			Find the best fit for you
+		</h3>
+	</header>
+	<nav id="mobile_menu"></nav>
+	<nav id="nav_menu">
+		<ul>
+			<li><a href="../index.html">Home</a></li>
+			<li><a href="../strength/index.html">Strength Training</a></li>
+			<li><a href="../cardio/index.html">Cardio Exercises</a></li>
+			<li>
+				<a href="../stress/index.html">Stress Relief</a>
+				<ul>
+					<li><a href="../stress/index.html">What is stress</a></li>
+					<li><a href="../stress/tips.html">5 Helpful Tips</a></li>
+					<li><a href="../stress/meditate.html">Meditation</a></li>
+					<li><a href="../stress/vipassana.html">Vipassana</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="index.html" id="current">Healthy Diets</a>
+				<ul>
+					<li><a href="index.html">Why a healthy diet plan?</a></li>
+					<li><a href="meals.html">Plan your Meals</a></li>
+					<li><a href="calories.html">Count your calories</a></li>
+					<li><a href="#" id="current">Calculate your BMI</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<main>
+		<div>
+			<section>
+				<h2>What is a Body Mass Index?</h2>
+				<p>Body mass index (BMI) is a measure of a person's body fat based on his or her height and weight. It can be used to determine if you are underweight, normal, overweight, or obese.</p>
+			</section>
+			<section>
+				<h3>Calculate your Body Mass Index</h3>
+				<p>Use the form that follows to calculate your BMI:</p>
+			</section>
+			<section>
+				<form action="" method="post" name="bmi_form" id="bmi_form">
+					<fieldset>
+						<legend>Enter your Information</legend>
+						<label for="feet">Height:</label>
+						<input type="text" name="feet" id="feet"><span>ft.</span>
+						<input type="text" name="inch" id="inch"><span>in.</span><br>
+						<label for="weight">Weight:</label>
+						<input type="text" name="weight" id="weight"><span>lbs</span><br>
+						<label for="bmi_result">BMI:</label>
+						<input type="text" name="bmi_result" id="bmi_result" readonly value=""><br>
+						<input type="button" id="calculate" value="Calculate">
+                		<input type="reset" id="reset_form" value="Reset">
+					</fieldset>
+				</form>
+			</section>
+			<section>
+				<h3>What do my results mean? Health authorities agree that:</h3>
+				<ul>
+					<li>People with a BMI of less than 18.5 are underweight.</li>
+					<li>A BMI of between 18.5 and 25 is ideal.</li>
+					<li>People with a BMI between 25 and 30 are considered overweight.</li>
+					<li>People with a BMI over 30 are considered obese.</li>
+				</ul>
+			</section>
+		</div>
+		<aside>
+			<h2>Additional resources</h2>
+				<p>
+					<ul>
+						<li><a href="/default.htm">Pysical activity and health</a></li>
+						<li><a href="/default.htm">Stretching exercices</a></li>
+						<li><a href="/default.htm">Strength training</a></li>
+						<li><a href="/default.htm">Cardiovascular training</a></li>
+						<li><a href="/default.htm">Yoga workout</a></li>
+					</ul>
+				</p>
+		</aside>
+	</main>
+	<footer>
+		<p>&copy; 2019 Shape Up!</p>
+		<p><span>icons made by <a href="www.flaticon.com">Flaticon</a> from <a href="www.flaticon.com">www.flaticon.com</a> are licensed by CC 3.0 DY</span></p>
+	</footer>
+</body>
+</html>

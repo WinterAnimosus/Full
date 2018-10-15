@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Grid: Demo 6</title>
+
+    <style>
+        *{box-sizing: border-box;}
+        .wrapper
+        {
+            display:grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-auto-rows: 200px;
+        }
+        .wrapper div
+        {
+            border: 2px solid rgb(53, 53, 145);
+            background: rgb(124, 160, 84);
+            padding: 1em;
+            color: black;
+            border-radius:5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Grid auto rows</h1>
+    <p>Ensure that tracks created in the implicit grid are 200pxls tall</p>
+
+    <div class="wrapper">
+        <div>One</div>
+        <div>2</div>
+        <div>Tree</div>
+        <div>For</div>
+        <div>V</div>
+        <div>6</div>
+        <div>sven</div>
+        <div>wait</div>
+        <div>9</div>
+        <div>X</div>
+        <div>12</div>
+        <div>thirty</div>
+        <div>fourteen</div>
+        <div>15</div>
+        <div>elolven</div>
+        <div>sisteen</div>
+        <div>svenadult</div>
+        <div>18</div>
+        <div>XIX</div>
+        <div>TWENTY</div>
+        <div>21</div>
+        <div>22</div>
+        <div>23</div>
+        <div>thirty four</div>
+        <div>fifty five</div>
+        <div>Blam</div>
+        <div>BLOOM</div>
+        <div>floof</div>
+        <div>sorry</div>
+        <div>ALL THE SIXTY</div>
+    </div>
+</body>
+</html>

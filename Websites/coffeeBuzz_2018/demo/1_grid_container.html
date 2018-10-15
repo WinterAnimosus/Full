@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Grid: Demo 1</title>
+
+    <style>
+        *{box-sizing: border-box;}
+        .wrapper
+        {
+            display:grid;
+        }
+        .wrapper div
+        {
+            border: 2px solid blue;
+            background: purple;
+            padding: 1em;
+            color: black;
+            border-radius:5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Grid Container</h1>
+    <p>create a grid container by declaring display: grid or display: inline-grid on an element. As soon as we do this all direct children of that element will become grid items.</p>
+    <p>In this example, I have a containing div with a class of wrapper, inside are Six child elements.</p>
+
+    <div class="wrapper">
+        <div>One</div>
+        <div>2</div>
+        <div>Tree</div>
+        <div>For</div>
+        <div>V</div>
+        <div>6</div>
+    </div>
+</body>
+</html>

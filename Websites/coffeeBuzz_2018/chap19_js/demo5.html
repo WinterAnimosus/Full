@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Java Script Demo Five</title>
+    <style>
+        label{
+            float: left;
+            width: 7em;
+            text-align: rigth;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function calculate()
+        {
+            // console.log('It works');
+            var sub = document.getElementById('txtSubtotal').value;
+            console.log(sub);
+            if (sub <= 0)
+            {
+                alert("Sub total must be greater then 0");
+                document.getElementById('txtSubtotal').select();
+                return;
+            }
+            else if (isNaN(sub))
+            {
+                alert("Sub total must be a Number");
+                return;
+            }
+            var rate = document.getElementById('txtTaxrate').value;
+            console.log(rate);
+            if (rate <= 0)
+            {
+                alert("Tax Rate must be greater then 0");
+                document.getElementById('txtTaxrate').select();
+                return;
+            }
+            else if (isNaN(rate))
+            {
+                alert("Tax Rate must be a Number");
+                return;
+            }
+            var sales = (parseFloat(sub) * (parseInt(rate)/100));
+            console.log(sales);
+            var total = parseFloat(sub) + parseFloat(sales);
+            console.log(total);
+            document.frmCalculate.txtTotal.value= total.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Basic Production Calculator</h1>
+    <form action="#" id="frmCalculate" name="frmCalculate">
+        <p>
+            <label for="txtSubtotal">SubTotal:</label>
+            <input type="text" id="txtSubtotal" name="txtSubtotal" value="">
+        </p>
+        <p>
+            <label for="txtTaxrate">Tax Rate(%):</label>
+            <input type="text" id="txtTaxrate" name="txtTaxrate" value="">
+        </p>
+        <p>
+            <label for="txtTotal">Total:</label>
+            <input type="text" id="txtTotal" name="txtTotal" readonly>
+        </p>
+        <p>
+            <input type="button" onclick="calculate();" id="btnCalculator" name="btnCalculator" value="Calculator">
+        </p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,317 @@
+/* * *//* * *//* * *//* * *//* * *//* * *//* * *//* * *//* * *//* * *//* * *//* * *//* * *//* * *//* * *//* * *//* * *//* * *//* * */
+    /* html *//* html *//* html *//* html *//* html *//* html *//* html *//* html *//* html *//* html *//* html *//* html *//* html */
+    html
+    {
+        background-image: url("../img/background.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+        /* body *//* body *//* body *//* body *//* body *//* body *//* body *//* body *//* body *//* body *//* body *//* body */
+        body
+        {
+            width: 90%;
+            border: 1px solid black;
+            background: rgba(255, 255, 255, 0.8);
+            display: grid;
+            margin: 1em auto 1em;
+            grid-template: auto auto 1fr auto auto auto / 80% 20%;
+        }
+
+            /* header *//* header *//* header *//* header *//* header *//* header *//* header *//* header *//* header */
+            header
+            {
+                font-family: 'Italiana', Geneva, Tahoma, sans-serif;
+                background: linear-gradient(to right, #800000 0%,#ffffff 70%,#ffffff 75%,#800000 100%);
+                margin: 0;
+                grid-column: 1/3;
+                grid-row: 1/2;
+            }
+            header h1
+            {
+                margin: 0;
+                color: white;
+                text-shadow: 2px 2px black;
+                padding: 1rem 0 .5rem 1rem;
+                font-size: 4em;
+                letter-spacing: 3px;
+            }
+            header h3
+            {
+                margin: 0;
+                padding: 0 0 1rem 2rem;
+                font-size: 1.5em;
+            }
+
+            /* END HEADER *//* END HEADER *//* END HEADER *//* END HEADER *//* END HEADER *//* END HEADER *//* END HEADER */
+            /* nav *//* nav *//* nav *//* nav *//* nav *//* nav *//* nav *//* nav *//* nav *//* nav *//* nav *//* nav *//* nav */
+            nav
+            {
+                width: 100%;
+                grid-column: 1/3;
+                grid-row: 2/3;
+            }
+            nav ul
+            {
+                display: flex;
+                margin: 0;
+                padding: 0;
+                flex-basis: 100%;
+            }
+            nav ul li
+            {
+                list-style: none;
+                flex-basis: 25%;
+                background: black;
+                border-right: 1px solid #6e6e6e;
+                text-align: center;
+                
+                cursor: pointer;
+            }
+            nav ul li:last-child
+            {
+                border:none;
+            }
+            nav ul li a
+            {
+                display: block;
+                font-weight: bold;
+                color: white;
+                text-decoration: none;
+                width: 100%;
+                transition: background 0.75s ease, color 0.75s ease;
+                background: black;
+                padding: .25em 0;
+            }
+            nav ul li a:hover,nav ul li a:focus 
+            {
+                background: rgba(255,255,255,0.4);
+            }
+            nav ul li a#current
+            {
+                background:#353535;
+            }
+
+            /* END NAV *//* END NAV *//* END NAV *//* END NAV *//* END NAV *//* END NAV *//* END NAV *//* END NAV *//* END NAV */
+            /* main *//* main *//* main *//* main *//* main *//* main *//* main *//* main *//* main *//* main *//* main *//* main */
+            main
+            {
+                grid-column: 1/2;
+                grid-row: 3/4;
+                padding-bottom: 2em;
+            }
+            div.heading
+            {
+                width: 100%;
+                padding: 1em 0 0 1em;
+            }
+            div.heading h2
+            {
+                margin: 0;
+                color: #800000;
+                
+            }
+            div.heading hr
+            {
+                width: 100%;
+                /* padding: 20em; */
+                border-style: none;
+                padding: 1px;
+                background: linear-gradient(to right, rgba(128,0,0,1) 0%,rgba(207,179,179,1) 78%,rgba(229,229,229,0) 100%);
+            }
+            main img
+            {
+                float: left;
+                padding: 0 0.75em 1em 1em;
+                width: 100%;
+                max-width: 300px;
+                overflow: hidden;
+            }
+            main p
+            {
+                /* margin: 0; */
+                width: 95%;
+                padding-left: 0.75em;
+            }
+            main::after
+            {
+                clear: both;
+            }
+            /* END MAIN *//* END MAIN *//* END MAIN *//* END MAIN *//* END MAIN *//* END MAIN *//* END MAIN *//* END MAIN */
+            /* aside *//* aside *//* aside *//* aside *//* aside *//* aside *//* aside *//* aside *//* aside *//* aside *//* aside */
+            aside
+            {
+                grid-column: 2/3;
+                grid-row: 3/4;
+                padding-left: 1em;
+            }
+            aside h3
+            {
+                margin: 0;
+                padding-top: 1.33em;
+            }
+            aside ul li
+            {
+                padding-bottom: 0.25em;
+            }
+            aside ul li a:link, aside ul li a:visited
+            {
+                color: #800000;
+                font-weight: bold;
+            }
+            aside ul li a:hover, aside ul li a:focus
+            {
+                color: #353535;
+            }
+            /* END ASIDE *//* END ASIDE *//* END ASIDE *//* END ASIDE *//* END ASIDE *//* END ASIDE *//* END ASIDE *//* END ASIDE */
+            /* section *//* section *//* section *//* section *//* section *//* section *//* section *//* section *//* section */
+            section
+            {
+                grid-column: 1/3;
+                grid-row: 4/5;
+            }
+            section div#sect
+            {
+                display: flex;
+            }
+            section div#sect div
+            {
+                flex-basis: 25%;
+                text-align: center;
+                padding: 1em 1em 2em 0;
+            }
+            section div#sect div#north
+            {
+                padding: 1em;
+            }
+            section div div h3
+            {
+                margin: 0;
+                padding-bottom: 1em;
+            }
+            section div#sect div img
+            {
+                max-width: 100%;
+            }
+            /* END SECTION *//* END SECTION *//* END SECTION *//* END SECTION *//* END SECTION *//* END SECTION *//* END SECTION */
+            /* footer *//* footer *//* footer *//* footer *//* footer *//* footer *//* footer *//* footer *//* footer *//* footer */
+            footer
+            {
+                background: #800000;
+                grid-column: 1/3;
+                grid-row: 5/6;
+            }
+            footer p
+            {
+                margin: 0;
+                color: white;
+                font-size: 75%;
+                padding: .5em 0 .5em 2em;
+            }
+
+            /* END FOOTER *//* END FOOTER *//* END FOOTER *//* END FOOTER *//* END FOOTER *//* END FOOTER *//* END FOOTER */
+        /* END BODY */
+    /* END HTML */
+/* END* */
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 768px)
+{
+    main
+    {
+        grid-column: 1/3;
+    }
+    aside
+    {
+        grid-column: 1/3;
+        grid-row: 4/5;
+    }
+    section
+    {
+        grid-row: 5/6;
+    }
+        section div#sect
+        {
+            display: grid;
+            grid-template: 1fr 1fr 1fr 1fr/ 1fr 1fr;
+        }
+        section div#sect div#north
+        {
+            grid-column: 1/2;
+            grid-row: 1/3;
+            padding: 1em .5em 1em 1em;
+            
+        }
+        section div#sect div#center
+        {
+            grid-column: 2/3;
+            grid-row: 1/3;
+            padding: 1em 1em 1em .5em;
+        }
+        section div#sect div#south
+        {
+            grid-column: 1/2;
+            grid-row: 3/5;
+            padding:1em .5em 2em 1em;
+            
+        }
+        section div#sect div#island
+        {
+            grid-column: 2/3;
+            grid-row: 3/5;
+            padding: 1em 1em 2em .5em;
+        }
+    footer
+    {
+        grid-row: 6/7;
+    }
+}
+@media only screen and (max-width: 426px)
+{
+    main img
+    {
+        width: 100%;
+        float: none;
+        display: block;
+        margin: 0 auto 0;
+        padding-bottom: 0;
+    }
+    div.heading
+    {
+        padding: 1em 0 0 0;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 375px)
+{
+    section div#sect div
+    {
+        padding: 1em !important;
+    }
+    section div#sect div:last-child
+    {
+        padding-bottom: 2em !important;
+    }
+    section div#sect div#north
+    {
+        grid-column: 1/3;
+        
+    }
+    section div#sect div#center
+    {
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+    section div#sect div#south
+    {
+        grid-column: 1/3;
+        grid-row: 3/4;
+    }
+    section div#sect div#island
+    {
+        grid-column: 1/3;
+        grid-row: 4/5;
+    }
+}

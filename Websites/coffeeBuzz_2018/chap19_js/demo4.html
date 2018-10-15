@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Java Script Demo Four</title>
+</head>
+<body>
+    <h1>Using the parseInt and parseFloat functions</h1>
+    <script>
+        document.write(parseInt("10") + "<br>");
+        document.write(parseInt("105.55") + "<br>");
+        document.write(parseInt("34 45 68") + "<br>");
+        document.write(parseInt("       66         ") + "<br>");
+        document.write(parseInt("40 years old") + "<br>");
+        document.write(parseInt("I am 40 years old") + "<br>");
+        document.write("I am " + parseInt("40") + " years old" + "<br>");
+        x = parseInt((Math.random() * 100 + 1));
+        d = new Date();
+        document.write(`I am ${x} years old. Script was run on ${d}.`);
+    </script>
+</body>
+</html>

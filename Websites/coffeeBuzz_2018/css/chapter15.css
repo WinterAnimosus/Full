@@ -1,0 +1,680 @@
+@charset "utf-8";
+/* CoffeeBuzz chapter 10 CSS Document:  Grid Layout; */
+
+/*********************************** GENERAL RULES *********************************/
+
+/*  apply a natural box layout model to all elements  */
+* {
+	font-family: 'Bonbon', sans-serif;
+  	-moz-box-sizing: border-box;
+ 	-webkit-box-sizing: border-box;
+ 	box-sizing: border-box; 
+}
+
+html 
+{
+	/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	/* background-size property is set to "cover", the background image will scale to cover the entire content area. 
+	Note: The "cover" value keeps the aspect ratio, and some part of the background image may be clipped */
+	background: url('../img/bg.jpg') no-repeat center center fixed;
+	background-size: cover;
+
+}
+body 
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: 300;
+	font-size: 100%; /* this results in being the default 16px */
+	margin: 0;
+	padding:0;
+	width: 100%;
+	/* chapter 10:  Grid */
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 300px auto 50px;
+	/* end chapter 10 */
+}
+
+/* Pseudo-classes for anchor <a> tag
+	1. a:link
+	2. a:visited
+	3. a:focus
+	4. a:hover
+	5. a:active
+	
+Note:  must be in this order, but ok to omit one or more
+*/
+a:link{color:#fff;}
+a:visited{color:#fff;}
+
+/***********************************  HEADER  *********************************/
+header 
+{
+	color:#fff;
+	text-align:center;
+	padding: 1rem 2%;
+	/*Chapter 10:  Grid */
+	grid-row: 1 / 2;
+	grid-column: 1 / span 12;
+	/* End Chapter 10 */
+}
+
+/*
+	header:  ancestor
+	    h1:  descendant
+
+	REM vs EM
+	rem:  Relative to font-size of the root element
+	REM as in Root EM
+	While em is relative to the font size of its direct or nearest parent, rem is only relative to the html (root) font-size. I like to think of it as a reset. If a style sheet is built in a modular fashion, then rem shouldn’t be needed very often, but it can be handy at times.
+
+	For example, if you’re trying to achieve consistent spacing without extra markup, rem can be used to define the padding and margins.
+	1rem would always take on the value of 16px no matter where you set it (unless you changed the font-size of <html>
+*/
+header h1
+{
+	margin:0;/* not necessary when using reset.css */
+	text-shadow:-2px -2px 4px #000;
+	font-size: 5em;
+}
+
+header p span
+{
+	text-shadow: 2px 2px 5px #000000;
+	font-weight: bold;
+}
+
+
+/*header h1:first-letter{font-size:125%}*/ /* CSS3 Pseudo-elements */
+
+
+/* when using reset.css 
+ header h1 {
+    font-size: 2rem;
+    font-weight: 700; 
+}
+  header h2 {
+    font-size: 1.2rem;
+    font-weight: 300; 
+}
+*/
+
+/*************************************  NAVIGATION  *********************************/
+nav 
+{
+    position: absolute;
+    width: 100%;
+    top: 250px; 
+    left: 0;
+}
+nav ul{
+	list-style:none;/*remove default bullets: not required when using reset.css*/
+	margin:0; /*remove default margin: not required when using reset.css*/
+	padding:0;/*remove default padding: not required when using reset.css*/
+	/* chapter 9:  Flexbox */
+	display:flex;
+	flex-basis: 100%;
+	/* end chapter 9 */
+}
+nav ul li 
+{
+	/* chapter 9: flex
+	float: left;
+	width: 25%; */
+	flex-basis: 25%;
+	/* end chapter 9*/
+	background: rgba(20, 2, 0, 0.8);
+}
+
+nav ul li a 
+{
+	display: block;
+	text-align: center;
+	font-weight: 700;
+	padding: .5rem 0;
+	text-decoration: none;
+	transition: background 0.75s ease, color 0.75s ease;
+	font-size: 0.875em; /* 14/16 */
+}
+
+
+nav ul li.active a, nav ul li a:hover,nav ul li a:focus 
+{
+	background: rgba(102,58,29,0.7);
+}
+
+/* Chapter 7:  2 tier navigation menu */
+nav ul ul
+{
+		display:none; /* don't display submenu until hover*/
+		position:absolute;
+		background: rgba(102,58,29,0.9);
+}
+nav ul ul li
+{
+	border:none;
+	float:none; /* display the submenus vertically*/
+}
+
+nav ul ul li
+{
+	width:100% /* size dropdown to full size of parent (25% of screen) */
+}
+nav ul li:hover  ul
+{
+	display:block; /* display submenu on hover of li*/
+	width:25%
+}
+
+/***********************************  MAIN SECTION  *********************************/
+main
+{
+	background: rgba(255,255,255,0.8);
+	/* Chapter 10:  Grid*/
+	grid-row: 2 / 3;
+	grid-column: 1 / span 10;
+	/* End Chapter 10*/
+}
+
+section
+{
+	padding: 1rem;	
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	border-radius: 20px;
+}
+
+
+/* Chapter 6_7 */
+section hr 
+{
+    max-width: 300px;
+    border: 1px solid #c8c8c8;
+}
+section h2
+{
+	text-align:center;
+}
+/* end Chapter 6_7 */
+
+/* Chapter 8:
+   RESPONSIVE IMAGES:  https://www.w3schools.com/css/css_rwd_images.asp 
+*/
+#splash img
+{	
+	padding:0.25em;
+	border: 1px dashed #463d2b;	
+	/* new:  added in chapter 8 */
+	width: 100%; 
+	max-width: 450px;	
+	/*width: 450px;*/
+}
+
+
+/*Responsive img:
+	Set max-width to 100%, the image will scale down if it has to, but never scale up to be larger than its original size
+	
+	If the width property is set to 100%, the image will be responsive and scale up and down
+*/
+
+#shops 
+{
+	background: rgba(182, 136, 52,0.8);
+	color: #fff;
+	margin: 2rem 1rem;
+}
+
+/* Chapter 6-7 special */
+#main-content, #specials 
+{
+    background: rgba(255,255,255,0.4);
+    color: inherit;
+    margin: 1rem;
+}
+
+#specials h2:before 
+{
+    background:url(../img/sale.png) no-repeat;
+    padding: 0 1rem;
+    content: " ";
+}
+ #specials h2:after 
+ {
+    background:url(../img/sale.png) no-repeat;
+    padding: 0 1rem;
+    content: " ";
+}
+
+#specials h4
+{
+	color:#541800;
+}
+
+#specials p 
+{
+    color: #E24444;
+}
+
+#specials img
+{
+    transition: 2s;
+    -webkit-transition: 2s;
+    width:75%;
+}
+
+#specials img:hover
+{
+    -webkit-filter: grayscale(80%);
+     filter: grayscale(80%);     
+    -ms-transform: scale(0.9,0.9); /* IE 9 */
+    -webkit-transform: scale(0.9,0.9); /* Safari */
+    transform: scale(0.9,0.9); /* Standard syntax */
+}
+
+/* Chapter 10:  Grid Layout */
+#special-items
+{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+}
+
+
+/************************************** SIDEBAR ************************************/
+
+/* Chapter 10:  Grid Layout */
+aside
+{
+	grid-row: 2 / 3;
+	grid-column: 11 / span 2;
+	background: rgba(255,255,255,0.8);
+}
+/* end chapter 10 */
+
+aside ul
+{
+	list-style-type: none;
+	padding:0;
+	/*margin:0 .25rem;*/
+	margin:1rem .25rem;
+}
+
+aside ul li 
+{
+		padding: .5rem;
+		margin-bottom: .4rem;
+		background: rgba(255,255,255,0.8);
+		color: #593620;
+}
+
+aside ul li:hover 
+{
+	font-weight: bold;
+	background: -webkit-linear-gradient(left, #ffffff 0%, #a67d35 100%);
+	background: -o-linear-gradient(left, #ffffff 0%, #a67d35 100%);
+	background: linear-gradient(to right, #ffffff 0%, #a67d35 100%);
+}
+
+/*must be after the hover affect to override it*/
+aside ul li:first-child{/*to learn more list item */
+	background: rgba(255,255,255,0.8);
+	color:#541800;
+	text-align:center;
+	text-transform:uppercase;
+	line-height:42px;
+	font-weight:bold;
+	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+aside ul li a
+{
+	color:#482914!important;
+	text-decoration: none;
+}
+
+
+/************************************* FOOTER *************************************/
+footer
+{
+	font-size:75%;
+	background:rgba(0,0,0,0.5);
+	/* Chapter 10:  Grid Layout */
+	grid-row: 3 / 4;
+	grid-column: 1 / span 12;
+	/* end chapter 10 */
+}
+
+footer p 
+{
+	color:#fff;
+	text-align:center;
+	padding-top:1.5em;
+}
+
+/*************************************  SPECIAL *************************************/
+/*----- row: Force an Element not to collapse -----*/
+.row::after 
+{
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.banner-area 
+{
+  background: url(../img/header-bg2.jpg) center;
+  background-size: cover;
+}
+
+.promo{
+	background: rgba(255,255,255,0.8);
+	color:#541800;
+    margin:0 .25rem;
+	padding:1em;
+    text-align: center;
+}
+
+.promo h3{
+	color:#541800;
+	font-size: 125%;
+}
+
+.promo  img{	
+	max-width:100%;
+}
+
+
+.center{
+	text-align:center
+}
+
+.special-box{
+  margin:0.25rem;
+  border: 1px dashed;
+  box-sizing: content-box;
+  background: #f7f7f7;
+}
+
+/*added in Chapter 8 */
+.special-box img {
+    border-radius: 10%;
+}
+
+/* added in chapter 8:  resize address to fit in iphone */
+address{font-size: 0.8em}
+
+.img-responsive
+{
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+#menu-items 
+{
+	display:grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap:3em;
+	text-align: center;
+}
+.thumbnail
+{
+	display:block;
+	padding:.5rem;
+	margin: .15rem;
+	line-height:1.42857143;
+	background-color: white;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+.thumbnail>img
+{
+	width:100%;
+}
+
+div#careers table
+{
+	border-spacing: 0;
+	border-collapse: collapse;
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 1.25rem;
+	border: 1px solid #654026;
+}
+div#careers table thead
+{
+	background-color: rgb(77,45,34);
+	color:white;
+}
+div#careers table a
+{
+	color: #300;
+}
+div#careers table td, div#careers table th
+{
+	padding: .25rem;
+	vertical-align: top;
+	border-top: 2px solid #654026;
+}
+div#careers table tr td:nth-of-type(n+4)
+{
+	color: #d9534f;
+	text-align: center;
+}
+div#careers table tbody tr:nth-child(even)
+{
+	background: #ccc;
+}
+div#careers table tbody tr:nth-child(odd)
+{
+	background: #fff;
+}
+div#careers table tbody tr:hover
+{
+	background-color: rgba(0, 0, 0, 0.4);
+	color:white;
+}
+form
+{
+	padding: 1rem 0;
+}
+fieldset
+{
+	border:0;
+}
+legend
+{
+	border-bottom: 2px solid #c8c8c8;
+	width:100%;
+}
+label
+{
+	float: left;
+	width: 100%;
+	font-weight: bold;
+	margin-right: 1em;
+	color: #825539;
+}
+input[type=text], input[type=email], input[type=date], select
+{
+	display: block;
+	width: 100%;
+	height: 2rem;
+	padding: .375rem .75rem;
+	color: #555;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+input[type=date]
+{
+	width: auto;
+}
+#heardAbout
+{
+	height:auto;
+}
+input[type=submit]
+{
+	width: 30%;
+	background: #595e59;
+	color: white;
+	padding:.765rem 1.25rem;
+	border:none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+input[type=submit]:hover
+{
+	background-color: #4e534e;
+}
+fieldset p label.pos
+{
+	color: inherit;
+	font-weight: normal;
+}
+fieldset p label.pos:last-child
+{
+	margin-bottom:1rem;
+}
+
+div#video-items
+{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 3em;
+}
+
+.flex-video
+{
+	position: relative;
+	padding-top: 25px;
+	padding-bottom: 67.5%;
+	height: 0;
+	margin-bottom: 16px;
+	overflow: hidden;
+}
+
+.flex-video.widescreen{padding-bottom: 60%;}
+.flex-video.vimeo{padding-top:0;}
+.flex-video iframe, .flex-video object, .flex-video embed, .flex-video video
+{
+	position: absolute;;
+	top: 0;
+	left:0;
+	width: 100%;
+	height: 100%;
+}
+
+#fair
+{
+	display: block;
+	background: #C09C58;
+	padding: 1em;
+	border-radius: 20px;
+	color: white;
+	margin-bottom: 3em;
+}
+
+#fair a
+{
+	color: #482914;
+}
+
+.embed-container
+{
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+}
+
+.embed-container iframe
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/*=======================================Chapter 10  Responsive Design:  Grid Layout ======================================== */
+/* Desktop first */
+
+/* big landscape tablets, laptops, and desktops to standard 1024*/
+@media (max-width:1023px) { 
+    body {
+/*	    width: 100%;
+	    margin: 0;
+	    border: none;*/
+        grid-template: repeat(5, auto) / 1fr;            /* change the template so it has five rows and one column */
+        grid-gap: 0;
+    }
+    header {
+        grid-row: 1 / 2;
+		grid-column: 1 / span 12;  
+    }
+/*    nav{
+    	top: 150px;
+    }*/
+    main{
+		grid-row: 2 / 3;
+		grid-column: 1 /2;
+	}
+	aside{
+		grid-row: 3 / 4;
+		grid-column: 1 /2;
+	}
+	footer{
+		grid-row: 4 / 5;
+		grid-column: 1 / span 12;	
+	}
+	nav{
+		top:150px;
+	}
+}
+
+/* mobile landscape to tablet portrait */
+@media only screen and (max-width: 767px) {
+	#special-items, #menu-items {
+		/* grid-template-columns: repeat(auto-fill, minmax(50%, 1fr)); */
+		grid-template-columns: repeat(2,1fr);
+	}
+	#splash img	{
+		width:300px;
+		float:left;
+		margin-right:0.75rem;
+
+	}	
+	nav{
+		position: relative;
+    	top: 1px;
+	}
+	header h1{
+		font-size: 3em;
+	}
+	html
+	{
+		font-size: .95em;
+	}
+}
+
+/* mobile portrait to mobile landscape */
+@media only screen and (max-width: 479px) {
+	#special-items, #menu-items, div#video-items {
+    	grid-template-columns: none;
+	}
+	nav ul li a
+	{
+		font-size: 0.7249em;
+	}
+	#main-content>img
+	{
+		display: none;
+	}
+	.thumbnail
+	{
+		width: 60%;
+		margin: auto auto;
+	}
+}

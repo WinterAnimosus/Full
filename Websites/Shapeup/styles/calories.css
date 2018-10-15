@@ -1,0 +1,38 @@
+figure
+{
+    float: right;
+    width:60%;
+    margin: 1em 1em 1em 0;
+    padding: 0;
+}
+table
+{
+    width: 100%;
+}
+table h1
+{
+    font-size: 1.75em;
+}
+table .bold
+{
+    font-weight: bold;
+}
+table thead tr th
+{
+    color: #810000;
+    text-align: left;
+    padding-bottom: 0.4em;
+}
+table tbody tr td
+{
+    vertical-align: top;
+    padding: 0.1em 0;
+}
+aside
+{
+    margin-right: 0;
+}
+figure figcaption
+{
+    padding-bottom: 1em;
+}

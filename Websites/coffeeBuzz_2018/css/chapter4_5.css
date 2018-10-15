@@ -1,0 +1,133 @@
+/*coffee buzz chapter 4_5.css file*/
+
+/*********************** General rules ***********************/
+*
+{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+html
+{
+    background:url("../img/bg.jpg");
+    background-size: cover;
+}
+body
+{
+    font-family: verdana, Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    margin:0;
+    padding:0;
+    width:100%;
+}
+a:link
+{
+    color:white;
+}
+a:visited
+{
+    color:white;
+}
+a:focus, a:hover
+{
+    color:red;
+}
+/*********************** Header rules ************************/
+header
+{
+    color:white;
+    text-align: center;
+    padding:1rem 2%;
+    height:300px;
+}
+header h1
+{
+    margin:0;
+    text-shadow:-8px -8px 16px black;
+    font-size: 5em;
+}
+header h1 a
+{
+    text-decoration: none;
+}
+header h1 a:hover
+{
+    color: white;
+}
+/********************* Navigation rules **********************/
+nav ul
+{
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+nav ul li
+{
+    float: left;
+    width: 25%;
+    background:black;
+}
+nav ul li a
+{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    padding: .5rem 0;
+    text-decoration:none;
+    font-size:14px;
+    border:solid;
+    border-color: white;
+    border-width: thin;
+    transition: background 0.50s ease, color 0.50s ease;
+}
+nav ul li a:hover, nav ul li a:focus
+{
+    background: rgba(102, 58, 29, 0.7);
+    color:black;
+}
+/************************ Main rules *************************/
+main
+{
+    padding:0.85rem;
+}
+section
+{
+    background:rgba(255, 255, 255, 0.75);
+    margin-top:1rem;
+    padding:1rem;
+}
+/*********************** Sidebar rules ***********************/
+
+
+/************************ Footer rules ***********************/
+footer
+{
+    font-size: 75%;
+    height: 50px;
+    background: rgba(0,0,0,0.5)
+}
+footer p
+{
+    color: white;
+    text-align: center;
+    padding-top: 1.5em;
+}
+/*********************** Special rules ***********************/
+#splash img
+{
+    max-width:100%;
+    border:1px dashed #463d2b;
+    padding: .25em;
+}
+#shops
+{
+    background:rgba(182, 136, 52, 0.8);
+    color: white;
+    margin: 2rem 1rem;
+}
+.banner-area
+{
+    background: url(../img/header-bg2.jpg) center;
+    background-size:cover;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Java Script Demo One</title>
+</head>
+<body>
+    <h1>Working with the Document object Model (DOM)</h1>
+    <script>
+        document.write("<p>This paragraph is written by JS</p>");
+        document.write("<p style='color:red'>This paragraph was written with JavaScript</p>");
+        document.write('<p style="color:navy">This paragraph was written with JavaScript</p>');
+        function pageConfirm()
+        {
+            // alert('Function works')
+            confirmStatus = confirm("Do you want to use this link?");
+            if (confirmStatus == true)
+            {
+                alert('Ok, then let\'s go to Google!');
+                location.href="http://www.google.ca";
+            }
+            else
+            {
+                alert('Ok, not going to Google!')
+            }
+        }
+    </script>
+    <a onmouseover="pageConfirm()" href="#">Go to google</a>
+</body>
+</html>

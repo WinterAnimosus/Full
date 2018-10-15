@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Grid: Demo 2</title>
+
+    <style>
+        *{box-sizing: border-box;}
+        .wrapper
+        {
+            display:grid;
+            grid-template-columns: 200px 200px 200px;
+        }
+        .wrapper div
+        {
+            border: 2px solid blue;
+            background: purple;
+            padding: 1em;
+            color: black;
+            border-radius:5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Grid Tracks</h1>
+    <p>We define rows and columns on our grid with the grid-template-columns and grid-template-rows properties.</p>
+	<p>These define grid tracks. A grid track is the space between any two lines on the grid. In the below image you can see a track highlighted – this is the first row track in our grid.</p>
+	<p>I can add to our earlier example by adding the grid-template-columns property, then defining the size of the column tracks.
+	We will create a grid with three 200-pixel-wide column tracks </p>
+
+    <div class="wrapper">
+        <div>One</div>
+        <div>2</div>
+        <div>Tree</div>
+        <div>For</div>
+        <div>V</div>
+        <div>6</div>
+    </div>
+</body>
+</html>

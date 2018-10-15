@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Java Script Demo Two</title>
+    <script>
+        function navigate()
+        {
+            // alert('navigate');
+            var url = document.frmNavigate.txtURL.value;
+            var res = url.substring(0, 7);
+            if (res !== 'http://')
+            {
+            url = ('http\://' + url);
+            }
+            window.open(url);
+        }
+    </script>
+</head>
+<body>
+    <h1>Working with the DOM</h1>
+    <form action="#" name="frmNavigate" id="frmNavigate">
+        <label for="txtURL">Enter the URL:</label>
+        <input type="text" name="txtURL" id="txtURL" value="www.google.ca">
+        <input type="button" onclick="navigate();" name="btnNavigate" id="btnNavigate" value="Navigate">
+    </form>
+</body>
+</html>

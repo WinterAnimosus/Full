@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery demo 1:  Basic syntax</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script>
+		$(function()
+		{
+			// alert('DOM is Ready!');
+
+			$("h2").text("The DOM is now loaded and can be manipulated");
+
+			$("#btnHideMe").click(function(){
+				// alert('click works');
+				$(this).hide();
+			});
+
+			$("#btnHide").click(function(){
+				// alert('click works');
+				$("p").toggle();
+			});
+
+			$("a").click(function(){
+				alert('Hello world');
+
+			});
+
+			$(".nolink").click(function(event){
+				alert('This link will go to jQuery.com');
+				event.preventDefault();
+			});
+		});
+		
+	</script>  
+</head>
+<body>
+	<h1>Getting Started with jQuery</h1>
+	<h2>Not loaded yet</h2>
+	<p>This is a paragraph that will disappear</p>
+	<p>This is another paragraph that will disappear</p>
+	<br>
+	<a href="http://jquery.com">jQuery website</a>
+	<a class="nolink" href="http://jquery.com">jQuery website</a>
+	<br>
+	<button id="btnHide">Hide Paragraphs</button> 
+	<button id="btnHideMe">Hide Me</button> 
+</body>
+</html>
