@@ -26,7 +26,6 @@
         <br>
         <h3>And what is one we may have used</h3>
         <p>Common databases could be anything, every company that stores information requires a database, for logging in, sending messages (if you didn't know, social media keeps every message you send, deleted or not) and even purchases on places like Amazon.</p>
-        <hr>
         </section>
         <section>
         <h3>Discuss and define each of the following terms</h3>
@@ -56,31 +55,67 @@
                 </ul>
             </li>
         </ul>
-        <hr>
         </section>
         <section>
             <h3>What is a DBMS?</h3>
             <p>A database management system.</p>
             <h3>And its functions?</h3>
             <p>A DBMS is system software for creating and managing databases. The DBMS provides users and programmers with a systematic way to create, retrieve, update and manage data.</p>
-            <hr>
         </section>
         <section>
             <h3>Explain why database design is important?</h3>
             <p>Database design is important for making it as fluid and compact as possible, without wasting company resources on space on the server for overly verbose data.</p>
             <p>If you created your database as scalable, then should the amount of data required to input increase or decrease, the size of the database will scale to match.</p>
-            <hr>
         </section>
         <section>
             <h3>What is the difference between Data, Information, and a Database?</h3>
             <p>Data, is information that is yet to be organized.</p>
             <p>Information, is data parsed into manageable bits, for humans to read and check.</p>
             <p>A Database, is a system to store a collection of data</p>
+        </section>
+        <section>
+            <img src="img/figure1.png" alt="table" title="table">
+            <h3>How many records does the table contain and how many fields are there per record?</h3>
+            <p>Fields-5 (columns or attributes)</p>
+            <p>Records-7 (rows)</p>
             <hr>
+            <h3>Problems would you encounter if you wanted to produce a listing by city?</h3>
+            <p>You would run into one major problem, the formatting in the “manager_address” is not properly written.</p>
+            <h3>How would you solve this problem by altering the structure above?</h3>
+            <p>You could delete the full address and only leave the city in the “manager_address” or create a new field named “city”.</p>
+        </section>
+        <section>
+            <h3>If you wanted to produce a listing of the table contents by last name, area code, city, state, or zip code how would you alter the table structure above?</h3>
+            <p>In order to produce a listing of table contents by search criteria given above you would need to separate the last name, area code, city, state and zip code all in there respective fields.</p>
+        </section>
+        <section>
+            <h3>What data redundancies do you detect, and how could these redundancies lead to anomalies?</h3>
+            <p>We have a few redundancies here, we have a couple people with more than 1 bid. Should someones name be misspelt, then a few errors could occur such as later on, such as the manager not having both projects</p>
+        </section>
+        <section>
+            <img src="img/figure2.png" alt="table" title="table">
+            <h3>Identify and discuss the serious data redundancy problems exhibited by the table structure.</h3>
+            <p>Firstly, it should be manager name not employee name. Employees should have their own tables for projects and everything after project name should be in its own separate employee table.</p>
+            <h3>Looking at the EMP_NAME and EMP_PHONE contents in the figure above, what change(s) would you recommend?</h3>
+            <p>EMP_NAME and EMP_PHONE should be in an employee table.</p>
+        </section>
+        <section>
+            <img src="img/figure3.png" alt="table" title="table">
+            <h3>Identify and discuss the serious data redundancy problems exhibited by the table structure shown.</h3>
+            <p>The BUILDING_CODE Is repeated due to the building having multiple teachers in it at a time. The ROOM_CODE also has different people in them at different times, Teachers will teach multiple times so they show up multiple times, Risell also doesn't have a middle name, and multiple initial's are repeated, as well as the times being repeated.</p>
+            <h3>Given the table structure shown in the figure above, what problem(s) might you encounter if you deleted building KOM?</h3>
+            <p>you would lose more information then intended, and would lose teachers.</p>
+        </section>
+        <section>
+            <img src="img/figure4.png" alt="model" title="model">
+            <h3>Describe (write out) the relationship depicted in the ERD shown below.</h3>
+            <p>Many classes are taught by one teacher, one teacher advises many students.</p>
+            <h3>Convert the ERD in problem 9 into a crow’s foot model.</h3>
+            <img src="img/figure5.png" alt="model" title="model" id="crow">
         </section>
     </main>
     <footer>
-        <p>BLah</p>
+        <p>&copy; non-profit education based website, designed by Nathan Brennan, & Manuel Doucet</p>
     </footer>
 </body>
 </html>
