@@ -8,6 +8,7 @@
     html
     {
         background: url("../img/maxresdefault.jpg");
+        background-attachment: fixed;
         background-size: cover;
     }
         /* body *//* body *//* body *//* body *//* body *//* body *//* body *//* body *//* body *//* body *//* body */
@@ -15,24 +16,24 @@
         {
             display: grid;
             grid-template: auto auto auto / repeat(12, 1fr);
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(177, 177, 177, 0.65);
         }
             /* header *//* header *//* header *//* header *//* header *//* header *//* header *//* header *//* header */
             header
             {
                 grid-column: 1/13;
                 grid-row: 1/3;
-                background: rgba(100, 100, 100, 0.7);
-                padding: 5rem;
+                background: rgba(70, 70, 70, 0.65);
+                padding: 3rem;
                 margin: 0;
             }
             header h1
             {
-                font-size: 5em;
+                font-size: 4em;
             }
             header h4
             {
-                margin-left: 10em;
+                margin-left: 8em;
                 color: rgb(75, 0, 0);
             }
             /* <HEADER> *//* <HEADER> *//* <HEADER> *//* <HEADER> *//* <HEADER> *//* <HEADER> *//* <HEADER> *//* <HEADER> */
@@ -101,6 +102,7 @@
             main section h3
             {
                 color: darkred;
+                text-align: center;
             }
             main section p
             {

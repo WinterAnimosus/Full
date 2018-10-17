@@ -99,19 +99,32 @@
             <img src="img/figure31.png" alt="answer" title="answer">
             <h3>Do the tables exhibit referential integrity? Answer Yes or No, then explain your answer. Write NA (Not Applicable) if the table does not have a foreign key.</h3>
             <img src="img/figure32.png" alt="answer" title="answer">
+            <h3>Identify the TRUCK table's candidate key(s).</h3>
+            <p>TRUCK_SERIAL_NUM</p>
+            <h3>Draw the entity relationship diagram for this database.</h3>
+            <img src="img/figure34.png" alt="answer" title="answer">
         </section>
         <section>
-
-        </section>
-        <section>
-
-        </section>
-        <section>
-
-        </section>
-        <section>
-
-        </section>
+            <img src="img/figure35.PNG" alt="question" title="question">
+            <h4>CHAR_HOURS= number of flight hours CHAR_FUEL_GALLONS = the number of gallons of fuel used during the trip<br>CHAR_DISTANCE = roundtrip distance in miles</h4>
+            <img src="img/figure36.PNG" alt="question" title="question">
+            <h4>Customers  are  charged  per  round-trip  mile,  using  the  MOD_CHG_MILE  rate.  The  MOD_SEAT  gives  the  total  number  of  seats  in  the  airplane,  including  the  pilot/copilot  seats.  Therefore,  a  PA31-350  trip  that  is  flown  by  a  pilot  and  a  copilot has eight passenger seats available.</h4>
+            <img src="img/figure37.PNG" alt="question" title="question">
+            <img src="img/figure38.PNG" alt="question" title="question">
+            <h3>ROBCOR is an aircraft charter company that supplies on-demand charter flight services, using  a  fleet  of  four  aircraft.  Aircraft  are  always  identified  by  a  (unique)  registration  number.  Therefore,  the  aircraft  registration  number  is  an  appropriate  primary  key  for  the AIRCRAFT table.</h3>
+            <h3>The nulls in the CHARTER table's CHAR_COPILOT column indicate that a  copilot is not necessarily  required  for  some  charter  trips  or  for  some  aircraft.  (Federal  Aviation  Administration rules require a copilot on jet aircraft and on aircraft having a gross take-off  weight  over  12,500  lbs.  (None  of  the  aircraft  in  the  AIRCRAFT  table  is  governed  by  this requirement; however, some customers may require the presence of a copilot for insurance reasons.) All charter trips are recorded in the CHARTER table.</h3>
+            <br>
+            <h3>For each table, identify, where possible, The primary key, The foreign key(s) if any and the table they reference </h3>
+            <img src="img/figure39.png" alt="answer" title="answer">
+            <h3>Create  an  Entity  Relationship  diagram.  Diagram  using  the  Crows  foot  model.  Hint:Take a look at the table contents. You will discover that an AIRCRAFT  can be used to  fly  many  CHARTER  trips,  but  that  each  CHARTER  trip  is  flown  by  one  AIRCRAFT.Similarly,  you  will  discover  that  a  MODEL  references  many  AIRCRAFT,  but  eachAIRCRAFT references a single MODEL, and so on.</h3>
+            <h4>Note: Database design properly precedes the creation of table structures and contents.However, when learning database design, sometimes it much easier to understand design concepts and requirements after examining some data. By observing actual attribute values, the abstract notion of relationships becomes "real" and, therefore, more easily understood. So, throughout this lesson and in the lessons question and problem sets, we have shown the table structures and contents first and then the E-R diagram is constructed to reflect the available information.</h4>
+            <h3>After carefully exploring the database's contents, note the following relationships:</h3>
+            <ul>
+                <li><h4>a CUSTOMER can request many CHARTER trips, but each CHARTER trip is requested by one CUSTOMER.</h4></li>
+                <li><h4>each CHARTER trip requires one AIRCRAFT, but an AIRCRAFT may be used to fly many different CHARTER trips.</h4></li>
+                <li><h4>each AIRCRAFT is of a certain MODEL and, because the charter company may have many aircraft of a given model, each MODEL may reference many AIRCRAFT.</h4></li>
+                <li><h4>each PILOT is an EMPLOYEE (but not all EMPLOYEEs are PILOTs!)</h4></li>
+            </ul>
     </main>
     <footer>
         <p>&copy; non-profit education based website, designed by Nathan Brennan, & Manuel Doucet</p>
