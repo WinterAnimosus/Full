@@ -115,9 +115,12 @@
             <h3>The nulls in the CHARTER table's CHAR_COPILOT column indicate that a  copilot is not necessarily  required  for  some  charter  trips  or  for  some  aircraft.  (Federal  Aviation  Administration rules require a copilot on jet aircraft and on aircraft having a gross take-off  weight  over  12,500  lbs.  (None  of  the  aircraft  in  the  AIRCRAFT  table  is  governed  by  this requirement; however, some customers may require the presence of a copilot for insurance reasons.) All charter trips are recorded in the CHARTER table.</h3>
             <br>
             <h3>For each table, identify, where possible, The primary key, The foreign key(s) if any and the table they reference </h3>
-            <img src="img/figure39.png" alt="answer" title="answer">
+            <p>Primary keys: CHAR_TRIP for CHARTER, AC_NUMBER for AIRCRAFT, MOD_CODE for MODEL, EMP_NUM for PILOT, CUS_CODE for CUSTOMER</p>
+            <p>Foreign key(s):AC_NUMBER is on the first CHARTER linking to AIRCRAFT, MOD_CODE from AIRCRAFT and MODEL, EMP_NUMBER linking PILOT and EMPLOYEE, CUS_CODE is linked from CUSTOMER to CHARTER, AC_NUMBER is linked to CHARTER from AIRCRAFT</p>
+            
             <h3>Create  an  Entity  Relationship  diagram.  Diagram  using  the  Crows  foot  model.  Hint:Take a look at the table contents. You will discover that an AIRCRAFT  can be used to  fly  many  CHARTER  trips,  but  that  each  CHARTER  trip  is  flown  by  one  AIRCRAFT.Similarly,  you  will  discover  that  a  MODEL  references  many  AIRCRAFT,  but  eachAIRCRAFT references a single MODEL, and so on.</h3>
             <h4>Note: Database design properly precedes the creation of table structures and contents.However, when learning database design, sometimes it much easier to understand design concepts and requirements after examining some data. By observing actual attribute values, the abstract notion of relationships becomes "real" and, therefore, more easily understood. So, throughout this lesson and in the lessons question and problem sets, we have shown the table structures and contents first and then the E-R diagram is constructed to reflect the available information.</h4>
+            <img src="img/figure39.png" alt="answer" title="answer">
             <h3>After carefully exploring the database's contents, note the following relationships:</h3>
             <ul>
                 <li><h4>a CUSTOMER can request many CHARTER trips, but each CHARTER trip is requested by one CUSTOMER.</h4></li>
