@@ -15,7 +15,7 @@
         body
         {
             display: grid;
-            grid-template: auto auto auto / repeat(12, 1fr);
+            grid-template: auto auto 1fr / repeat(12, 1fr);
             background: rgba(177, 177, 177, 0.65);
         }
             /* header *//* header *//* header *//* header *//* header *//* header *//* header *//* header *//* header */
